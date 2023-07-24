@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myapp">
+
+    <!-- Other manifest elements -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application tools:ignore="ExtraText">
+        <!-- Your application components -->
+
+        <activity android:exported="true"
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            tools:ignore="MissingClass"
+            android:label="Outlook">
+            <!-- other activity attributes -->
+
+
+        <!-- Activity elements -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Add the following intent filter for email handling -->
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="mailto" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
